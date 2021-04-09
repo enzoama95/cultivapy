@@ -1,0 +1,7 @@
+DEBUG=on
+SECRET_KEY=changeme
+#change @db to @127.0.0.1 if you are not using docker
+DATABASE_URL=postgis://postgres:1234@127.0.0.1:5432/cultivapy_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=1234
+POSTGRES_DB=cultivapy_db

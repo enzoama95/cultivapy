@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block bread %}
+  <nav class="breadcrumb  has-arrow-separator" aria-label="breadcrumbs">
+    <ul>
+        <li>
+            <a href="/">
+                <span class="icon is-small">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                </span>
+                <span>{% trans "Home" %}</span>
+            </a>
+        </li>
+        <li class="is-active">
+          <a href="#" aria-current="page">{% trans "Receive help" %}</a>
+        </li>
+      </ul>
+  </nav>
+{% endblock bread %}
+{% block content%}
+<div class="tile is-ancestor center">
+    <div class="tile is-5 is-vertical is-parent">
+        <div class="tile is-child notification is-danger">
+            <p class="title">{% trans "Important" %}</p>
+            <p class="has-text-justified">
+	    {% blocktrans trimmed %}
+            This is a citizen platform that depends totally on the good will of the people. There are no guarantees of help yes or yes.
+            The information that one uploads will be 100% publicly accessible.
+	    {% endblocktrans %}
+	    </p>
+	    <a href="/legal">{% trans "More Information" %}</a>
+        </div>
+        <div class="tile is-child is-warning box">
+            <p class="title">{% trans "How does it work" %}</p>
+            <p class="has-text-justified">
+	    {% blocktrans trimmed %}
+            You have to upload your data: name, contact phone, city, location and what you need.
+	    {% endblocktrans %}
+            <b>AyudaPy</b>
+	    {% blocktrans trimmed %}
+	    allows you to share your request for help so that more people see it, as well as offering
+	    people who want to help an interface to find those who need it.
+	    {% endblocktrans %}
+	    </p>
+        </div>
+        <div class="tile is-child ">
+            <a href="/solicitar">
+                <button class="button is-success is-large is-fullwidth is-size-5 has-text-weight-bold">
+                    <span>{% trans "OK I understand, I want to continue" %}</span>
+                    <span class="icon is-medium"><i class="fas fa-thumbs-up is-le"></i></span>
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
